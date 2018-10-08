@@ -7,7 +7,7 @@
       <a href="https://github.com/Jabezare/ErettsegiIPv6" target="_blank">Forrás </a>
       <a href="https://github.com/nitslaszlo/JedlikVueJsStarter" target="_blank">SDK</a>
     </p>
-    <txt-olvaso v-on:load="forras = $event" title="Kérem töltse fel a forrás (id.txt) állományt!" />
+    <txt-olvaso v-on:load="forras = $event" title="Kérem töltse fel a forrás (ip.txt) állományt!" />
     <div id="megoldas" v-show="mutat">
       <p>1. feladat:<br>Az adatok beolvasása</p>
       <p>2. feladat:<br>A fájlban {{ipcimek.length}} bejegyzés van.</p>
