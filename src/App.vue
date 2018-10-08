@@ -8,7 +8,7 @@
       <a href="https://github.com/nitslaszlo/JedlikVueJsStarter" target="_blank">SDK</a>
     </p>
     <txt-olvaso v-on:load="forras = $event" title="Kérem töltse fel a forrás (ip.txt) állományt!" />
-    <div id="megoldas" v-show="mutat">
+    <div id="megoldas" v-if="mutat">
       <p>1. feladat:<br>Az adatok beolvasása</p>
       <p>2. feladat:<br>A fájlban {{ipcimek.length}} bejegyzés van.</p>
       <p>3. feladat:<br>A legalacsonyabb tárolt Ip-cím: {{Legalacsonyabb}}</p>
@@ -49,7 +49,7 @@ export default class App extends Vue {
     try {
       this.forras.split("\n").forEach(i => {
         const aktSor: string = i.trim();
-        let aktCim: string[] = i.split(":");
+        let aktCim: string[] = aktSor.split(":");
         this.ipcimek.push(new IPadress(aktCim));
       });
       this.mutat = true;
