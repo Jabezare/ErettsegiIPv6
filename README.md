@@ -1,6 +1,6 @@
 ## netlify link a teszteléshez:
 
-https://pedantic-kalam-66aa14.netlify.com/
+https://xenodochial-kalam-2a01f6.netlify.com/
 
 ## Fejlesztői környezet kialakítása:
 
