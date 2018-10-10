@@ -36,7 +36,7 @@ export default class App extends Vue {
   private ipcimek: IPadress[] = [];
   private forras: string = "";
   private mutat: boolean = false;
-  public bekeres: number = 0;
+  public bekeres: number = 10;
 
   @Watch("forras", { immediate: true, deep: true })
   onForrasChanged(val: string, oldVal: string) {
