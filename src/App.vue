@@ -14,7 +14,7 @@
       <p>3. feladat:<br>A legalacsonyabb tárolt Ip-cím: {{Legalacsonyabb}}</p>
       <p>4. feladat:<br>Dokumentációs:{{Tipusok[0]}}<br>Globális:{{Tipusok[1]}}<br>Helyi:{{Tipusok[2]}}<br>Ismeretlen:{{Tipusok[3]}}</p>
       <label for="Hatodik_feladat">Kérek egy sorszámot:</label>
-      <input type="text" name="Hatodik_feladat" v-bind="bekeres">
+      <input type="text" name="Hatodik_feladat" v-model="bekeres">
       <pre>6. feladat:<br>{{Nullaknelkul}}</pre>
       <p>7. feladat:<br>A kiválasztott Ip-cím nagyon röviden:{{Rovid}}</p>
       <span v-for="(index, item) in SokToTxt" :key="index">{{item}}<br></span>
@@ -36,7 +36,7 @@ export default class App extends Vue {
   private ipcimek: IPadress[] = [];
   private forras: string = "";
   private mutat: boolean = false;
-  public bekeres: number = 10;
+  public bekeres: number = 1;
 
   @Watch("forras", { immediate: true, deep: true })
   onForrasChanged(val: string, oldVal: string) {
@@ -68,7 +68,7 @@ export default class App extends Vue {
 
   //4. feladat
   private get Tipusok(): number[] {
-    let darab: number[] = [4];
+    let darab: number[] = [0, 0, 0, 0];
     this.ipcimek.forEach(i => {
       switch (i.Fajta) {
         case "Dokumentációs":
